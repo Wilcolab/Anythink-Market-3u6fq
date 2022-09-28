@@ -159,7 +159,7 @@ router.post("/", auth.required, function (req, res, next) {
 // return a item
 router.get("/:item", auth.optional, function (req, res, next) {
   Promise.all([
-    req.payload ? User.findById(req.payload.id) : null,
+    req.payload ? User.findById(req.payload.id) : 'placeholder.png',
     req.item.populate("seller").execPopulate()
   ])
     .then(function (results) {
