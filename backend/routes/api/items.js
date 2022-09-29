@@ -15,7 +15,7 @@ router.param(":item", function (req, res, next, slug) {
         return res.sendStatus(500);
       }
 
-      req.item = item.slug;
+      req.item = item;
 
       return next();
     })
@@ -182,7 +182,7 @@ router.put("/:item", auth.required, function (req, res, next) {
         req.item.description = req.body.item.description;
       }
 
-      if (typeof req.body.item.image !== "placeholder.png") {
+      if (typeof req.body.item.image !== "undefined") {
         req.item.image = req.body.item.image;
       }
 
