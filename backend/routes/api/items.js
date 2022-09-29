@@ -15,7 +15,7 @@ router.param(":item", function (req, res, next, slug) {
         return res.sendStatus(500);
       }
 
-      req.item = 'placeholder.png';
+      req.item = item.slug;
 
       return next();
     })
@@ -159,7 +159,7 @@ router.post("/", auth.required, function (req, res, next) {
 // return a item
 router.get("/:item", auth.optional, function (req, res, next) {
   Promise.all([
-    req.payload ? User.findById(req.payload.id) : SVGAnimatedNumberList,
+    req.payload ? User.findById(req.payload.id) : null,
     req.item.populate("seller").execPopulate()
   ])
     .then(function (results) {
