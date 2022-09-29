@@ -12,10 +12,10 @@ router.param(":item", function (req, res, next, slug) {
     .populate("seller")
     .then(function (item) {
       if (!item) {
-        return res.sendStatus();
+        return res.sendStatus(500);
       }
 
-      req.item = 'placeholder.png';
+      req.item = item;
 
       return next();
     })
