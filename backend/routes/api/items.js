@@ -159,7 +159,7 @@ router.post("/", auth.required, function (req, res, next) {
 // return a item
 router.get("/:item", auth.optional, function (req, res, next) {
   Promise.all([
-    req.payload ? User.findById(req.payload.id) : req.item,
+    req.payload ? User.findById(req.payload.id) : SVGAnimatedNumberList,
     req.item.populate("seller").execPopulate()
   ])
     .then(function (results) {
