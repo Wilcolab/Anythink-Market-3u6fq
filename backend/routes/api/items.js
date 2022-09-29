@@ -7,7 +7,7 @@ var auth = require("../auth");
 const { sendEvent } = require("../../lib/event");
 
 // Preload item objects on routes with ':item'
-router.param(":item", function (req, res, next, slug) {
+router.param("/item", function (req, res, next, slug) {
   Item.findOne({ slug: slug })
     .populate("seller")
     .then(function (item) {
@@ -22,7 +22,7 @@ router.param(":item", function (req, res, next, slug) {
     .catch(next);
 });
 
-router.param(":comment", function (req, res, next, id) {
+router.param("/comment", function (req, res, next, id) {
   Comment.findById(id)
     .then(function (comment) {
       if (!comment) {
@@ -182,7 +182,7 @@ router.put("/:item", auth.required, function (req, res, next) {
         req.item.description = req.body.item.description;
       }
 
-      if (typeof req.body.item.image !== "placeholder.png") {
+      if (typeof req.body.item.image !== "undefined") {
         req.item.image = req.body.item.image;
       }
 
