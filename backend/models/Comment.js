@@ -10,7 +10,7 @@ var CommentSchema = new mongoose.Schema(
 );
 
 // Requires population of seller
-CommentSchema.methods.toJSONFor = function(user) {
+CommentSchema.methods.toJSONFor = function (user) {
   return {
     id: this._id,
     body: this.body,
