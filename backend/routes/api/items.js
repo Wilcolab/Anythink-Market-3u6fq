@@ -15,7 +15,7 @@ router.param("/item", function (req, res, next, slug) {
         return res.sendStatus(500);
       }
 
-      req.item = item;
+      req.item = item.slug;
 
       return next();
     })
