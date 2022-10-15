@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../imgs/topbar_logo.png";
+import React, {useState} from "react";
 
 const LoggedOutView = () => {
   return (
@@ -60,10 +61,10 @@ function Header() {
         <img alt="logo" src={logo} />
       </Link>
 
-      {this.props.currentUser ? (
-        <LoggedInView currentUser={this.props.currentUser} />
+      {currentUser ? (
+        <LoggedInView currentUser={currentUser} />
       ) : (
-        <LoggedOutView currentUser={this.props.currentUser} />
+        <LoggedOutView currentUser={currentUser} />
       )}
     </nav>
   );
