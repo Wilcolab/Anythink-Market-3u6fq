@@ -1,13 +1,8 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../imgs/topbar_logo.png";
-import React, { useState } from "react";
-// Put here original file
-// Using hooks LoggedOutView...
 
-function handleLoggedOutView() {
-  const [loggedOutView, setLoggedOutView] = useState()
-  setLoggedOutView()
-
+const LoggedOutView = () => {
   return (
     <ul className="navbar-nav ml-auto">
       <li className="nav-item">
@@ -22,15 +17,10 @@ function handleLoggedOutView() {
         </Link>
       </li>
     </ul>
-  )
-}
+  );
+};
 
-// Using hooks LoggedInView...
-
-function handleLoggedInView(props) {
-  const [loggedInView, setoogedInView] = useState(0)
-  setoogedInView(props.loggedInView)
-
+const LoggedInView = (props) => {
   return (
     <ul className="navbar-nav ml-auto">
       <li className="nav-item">
@@ -56,11 +46,22 @@ function handleLoggedInView(props) {
         </Link>
       </li>
     </ul>
-  )
+  );
 }
 
 // Using Hooks...
 function Header(currentUser) {
+  const [loggedInView, setloggedInView] = useState({ currentUser })
+  const [loggedOutView, setloggedOutView] = useState({ currentUser })
+
+  function handleloggedInView(e) {
+    setloggedInView(e.target.currentUser)
+  }
+
+  function handleloggedOutView(e) {
+    setloggedOutView(e.target.currentUser)
+  }
+
   return (
     <nav
       className="navbar navbar-expand-md navbar-dark"
@@ -71,9 +72,9 @@ function Header(currentUser) {
       </Link>
 
       {currentUser ? (
-        <LoggedInView currentUser={props.currentUser} />
+        <loggedInView currentUser={handleloggedInView.currentUser} />
       ) : (
-        <LoggedOutView currentUser={currentUser} />
+        <loggedOutView currentUser={handleloggedOutView.currentUser} />
       )}
     </nav>
   );
