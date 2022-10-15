@@ -61,10 +61,10 @@ function Header() {
         <img alt="logo" src={logo} />
       </Link>
 
-      {currentUser ? (
-        <LoggedInView currentUser={currentUser} />
+      {props.currentUser ? (
+        <LoggedInView currentUser={props.currentUser} />
       ) : (
-        <LoggedOutView currentUser={currentUser} />
+        <LoggedOutView currentUser={props.currentUser} />
       )}
     </nav>
   );
