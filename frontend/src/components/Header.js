@@ -60,8 +60,8 @@ function Header() {
         <img alt="logo" src={logo} />
       </Link>
 
-      {props.currentUser ? (
-        <LoggedInView currentUser={props.currentUser} />
+      {currentUser ? (
+        <LoggedInView currentUser={currentUser} />
       ) : (
         <LoggedOutView currentUser={props.currentUser} />
       )}
