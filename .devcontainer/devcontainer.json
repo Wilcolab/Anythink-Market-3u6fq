@@ -2,10 +2,16 @@
   "name": "Anythink Development Container",
   "build": {
     "dockerfile": "Dockerfile",
-    "args": { "VARIANT": "ubuntu-22.04" }
+    "args": {
+      "VARIANT": "ubuntu-22.04"
+    }
   },
-
-  "forwardPorts": [3000, 3001, 5433, 27017],
+  "forwardPorts": [
+    3000,
+    3001,
+    5433,
+    27017
+  ],
   "portsAttributes": {
     "3000": {
       "label": "Backend",
@@ -33,7 +39,6 @@
     }
   },
   "postAttachCommand": "/bin/bash .devcontainer/setup.sh",
-
   "features": {
     "docker-in-docker": "latest",
     "github-cli": "latest",
@@ -41,7 +46,6 @@
       "version": "latest"
     }
   },
-
   "settings": {
     "extensions.ignoreRecommendations": true,
     "workbench.startupEditor": "none",
