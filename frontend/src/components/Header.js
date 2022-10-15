@@ -1,11 +1,11 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../imgs/topbar_logo.png";
+import React, { useState } from "react";
 // Put here original file
 // Using hooks LoggedOutView...
-const [loggedOutView, setLoggedOutView] = useState()
 
 function handleLoggedOutView() {
+  const [loggedOutView, setLoggedOutView] = useState()
   setLoggedOutView()
 
   return (
@@ -26,9 +26,9 @@ function handleLoggedOutView() {
 }
 
 // Using hooks LoggedInView...
-const [loggedInView, setoogedInView] = useState(0)
 
 function handleLoggedInView(props) {
+  const [loggedInView, setoogedInView] = useState(0)
   setoogedInView(props.loggedInView)
 
   return (
