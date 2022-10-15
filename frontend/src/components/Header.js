@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../imgs/topbar_logo.png";
-import React, {useState} from "react";
 
 const LoggedOutView = () => {
   return (
