@@ -61,9 +61,9 @@ function Header(currentUser) {
       </Link>
 
       {currentUser ? (
-        <LoggedInView currentUser={handleloggedInView.currentUser} />
+        <LoggedInView currentUser={currentUser} />
       ) : (
-        <LoggedOutView currentUser={handleloggedOutView.currentUser} />
+        <LoggedOutView currentUser={currentUser} />
       )}
     </nav>
   );
