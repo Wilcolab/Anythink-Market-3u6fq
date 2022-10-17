@@ -51,17 +51,6 @@ const LoggedInView = (props) => {
 
 // Using Hooks...
 function Header(currentUser) {
-  const [loggedInView, setloggedInView] = useState({ currentUser })
-  const [loggedOutView, setloggedOutView] = useState({ currentUser })
-
-  function handleloggedInView(e) {
-    setloggedInView(e.target.currentUser)
-  }
-
-  function handleloggedOutView(e) {
-    setloggedOutView(e.target.currentUser)
-  }
-
   return (
     <nav
       className="navbar navbar-expand-md navbar-dark"
@@ -72,9 +61,9 @@ function Header(currentUser) {
       </Link>
 
       {currentUser ? (
-        <loggedInView currentUser={handleloggedInView.currentUser} />
+        <LoggedInView currentUser={handleloggedInView.currentUser} />
       ) : (
-        <loggedOutView currentUser={handleloggedOutView.currentUser} />
+        <LoggedOutView currentUser={handleloggedOutView.currentUser} />
       )}
     </nav>
   );
