@@ -49,7 +49,6 @@ const LoggedInView = (props) => {
   );
 }
 
-// Using Hooks...
 function Header(props) {
   return (
     <nav
