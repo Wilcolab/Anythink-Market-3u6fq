@@ -47,7 +47,7 @@ const LoggedInView = (props) => {
       </li>
     </ul>
   );
-}
+};
 
 function Header(props) {
   return (
