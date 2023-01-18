@@ -9,15 +9,6 @@ const mapDispatchToProps = (dispatch) => ({
 
 function CommentInput(props) {
   const [body, setBody] = useState("")
-  const createComment = async (ev) => {
-    ev.preventDefault();
-    agent.Comments.create(props.slug, {
-      body: body,
-    }).then((payload) => {
-      props.onSubmit(payload);
-    });
-    setBody("");
-  }
 
   return (
     <form className="card comment-form m-2" onSubmit={props.createComment}>
