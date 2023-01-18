@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import agent from "../../agent";
 import { connect } from "react-redux";
 import { ADD_COMMENT } from "../../constants/actionTypes";
@@ -8,7 +8,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 function CommentInput(props) {
-  const [body, setBody] = useState("")
+  const [body, setBody] = useState("");
   const createComment = async (ev) => {
     ev.preventDefault();
     agent.Comments.create(props.slug, {
@@ -17,7 +17,7 @@ function CommentInput(props) {
       props.onSubmit(payload);
     });
     setBody("");
-  }
+  };
 
   return (
     <form className="card comment-form m-2" onSubmit={createComment}>
