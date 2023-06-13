@@ -8,7 +8,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const CommentInput = (props) => {
-  const [body, setBody] = React.useState("")
+  const [body, setBody] = React.useState("");
 
   const createComment = async (ev) => {
     ev.preventDefault();
@@ -17,32 +17,32 @@ const CommentInput = (props) => {
     }).then((payload) => {
       props.onSubmit(payload);
     });
-    setBody("")
-  }
-}
+    setBody("");
+  };
 
-return (
-  <form className="card comment-form m-2" onSubmit={createComment}>
-    <div className="card-block">
-      <textarea
-        className="form-control"
-        placeholder="Write a comment..."
-        value={state.body}
-        onChange={setBody}
-        rows="3"
-      ></textarea>
-    </div>
-    <div className="card-footer">
-      <img
-        src={props.currentUser.image}
-        className="user-pic mr-2"
-        alt={props.currentUser.username}
-      />
-      <button className="btn btn-sm btn-primary" type="submit">
-        Post Comment
-      </button>
-    </div>
-  </form>
-);
+  return (
+    <form className="card comment-form m-2" onSubmit={createComment}>
+      <div className="card-block">
+        <textarea
+          className="form-control"
+          placeholder="Write a comment..."
+          value={body}
+          onChange={(ev) => setBody(ev.target.value)}
+          rows="3"
+        ></textarea>
+      </div>
+      <div className="card-footer">
+        <img
+          src={props.currentUser.image}
+          className="user-pic mr-2"
+          alt={props.currentUser.username}
+        />
+        <button className="btn btn-sm btn-primary" type="submit">
+          Post Comment
+        </button>
+      </div>
+    </form>
+  );
+};
 
 export default connect(() => ({}), mapDispatchToProps)(CommentInput);
