@@ -2,8 +2,8 @@
 
 yarn seeds
 
-# Exec into Mongo container
-docker exec -it anythink-backend-node bash
+# # Exec into Mongo container
+# docker exec -it anythink-backend-node bash
 
-# Run seeds script 
-node seeds.js
+# # Run seeds script 
+# node seeds.js
